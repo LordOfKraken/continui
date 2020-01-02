@@ -1,0 +1,427 @@
+\documentclass[a4paper,11pt]{report}
+%\usepackage{fontspec}
+%\setmainfont{Exo}
+
+%stile
+\usepackage{fancyhdr}
+\usepackage[a4paper, top=2.5cm, bottom=2cm, left=1.5cm, right=1.5cm]{geometry}
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%Immagini, grafici
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{caption}
+
+\usepackage{lipsum}
+\usepackage{verbatim}
+\usepackage{siunitx}
+\usepackage{hyperref}
+
+\usepackage{amsmath,amssymb,amsthm} % matematica
+\usepackage{booktabs}
+\usepackage{array} %colonne di larghezza prefissata per tabular
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+\title{Note del corso di Fisica dei Continui}
+\author{trascritte da \\Luca Colombo Gomez}
+\date{AA 2019/2020}
+
+\newcommand{\eacc}{È }
+\newcommand{\defeq}{\overset{\cdot}{=}}
+
+\begin{document}
+	\titlepage
+	\maketitle
+	\tableofcontents
+	
+	\begin{chapter}{Memorie della termodinamica}
+		Il primo principio della termodinamica, visto come legge di bilancio energetico, parte dall'energia interna U di un sistema, la cui equazione dU è in generale scrivibile come
+		$$dU = TdS - pdV + \mu dN $$
+		(con $\mu$ potenziale chimico e N numero molare; se ci sono più componenti scriviamo $\sum_i \mu_i dN_i $, ma la sostanza è la stessa)
+		e allora per un sistema termostatato isolato che non scambia altro che calore (dV =0, dN = 0)
+		$$
+		\delta Q = dU = TdS \rightarrow dS = \dfrac{\delta Q}{T}
+		$$
+		sia la trasformazione reversibile o meno.
+		
+		\eacc utile osservare di U, che essa è funzione di S,V,N, tutte grandezze estensive, ed è esa stessa estensiva, vale a dire 
+		\begin{equation}
+			U(\lambda S, \lambda V, \lambda N) = \lambda \cdot U(S,V,N) \qquad \forall \lambda \in \Re^+
+		\end{equation}
+		ovvero U è una funzone omogenea di grado 1. Per le funzioni omogenee di grado n si ha $f(\lambda x) = \lambda ^n f(x)$, o anche, data $f(x_1,\dots, n_m)$
+		\begin{equation}
+			\sum_{i=1}^{m}x_i \dfrac{\partial}{\partial x_i} f(x_1, \dots, x_m) = n \cdot f(x_1, \dots, x_m)
+		\end{equation}
+		che, applicato a U(S,V,N), da
+		\begin{equation}
+			U(S,V,N) = \dfrac{\partial U}{\partial S} S + \dfrac{\partial U}{\partial V} V + \dfrac{\partial U}{\partial N} N
+		\end{equation}
+		Da $dU = TdS -pdV + \mu dN$ si ottengono le \underline{equazioni di stato}
+		\begin{equation}
+			T=\dfrac{\partial U}{\partial S}; \qquad p = - \dfrac{\partial U}{\partial V}; \qquad \mu = \dfrac{\partial U}{\partial N}
+		\end{equation}
+		e per confronto con la relazione di Eulero si ha
+		\begin{equation}
+			U(S,V,N)=TS-pV+\mu N
+		\end{equation}
+		\begin{section}{Potenziale di Helmholtz F ( o energia libera di Helmoltz)}
+			F da una misura del lavoro estraibile da un sistema chiuso a T,V costanti (vediamo sotto).
+			Si ottiene come trasformazione di Legendre di U rispetto a S:
+			\begin{equation}
+				F \overset{\cdot}{=} U- \dfrac{\partial U}{\partial S} S = U-TS
+			\end{equation}
+			e si ha, da $U(S,V,N)$, una funzione $F = F(\frac{\partial U}{\partial S} \rightarrow T, V,N)$
+			
+			Inoltre 
+			\begin{subequations}
+				\begin{equation}
+				F = U - TS = TS - pV + \mu N -TS = -pV + \mu N
+				\end{equation}
+				\begin{equation}
+				dF = dU - TdS - SdT = TdS - pdV + \mu dN - TdS - SdT = -SdT - pdV + \mu dN
+				\end{equation}
+			\end{subequations}
+			Possiamo dunque dimostrare l'affermazione iniziale. Preso un sistema S formato da costituenti in contatto termico con un termostato R a temperatura $T^R$ ( reservoir infinito di calore), il lavoro massimo estraibile dal sistema è
+			\begin{equation}
+				dL^{max} = -dF^S
+			\end{equation}
+			Infatti 
+			$$
+			dL = -dU^S - dU^R \underset{\text{R termostato}}{\underbrace{=}} -dU^S - T^RdS^R
+			$$
+			Poiché il sistema non scambia calore con l'esterno, l'entropia non decresce:
+			$$
+			dS^S + dS^R \geq 0 \implies -dS^R \leq dS^S
+			$$
+			$$
+			\implies dL = -dU^S - T^R dS^R \leq -dU^S + T^R dS^S = -d(U^S - T^R S^S) \underset{T^R = T^S \textrm{(contatto termico)}}{\underbrace{=}} -d(U^S - T^S S^S)
+			$$
+			cioè $ dL\leq -dF^S$, il cui massimo appunto è $dL^{max}=-dF^S$ (caso di trasformazione reversibile)\\
+			
+			Osservazioni: 
+			\begin{itemize}
+				\item ne consegue che lo stato di equilibrio del sistema termostatato è quello che minimizza l'energia libera di Helmoltz; (in equivalente è minima U, $dU = dU^S + d^R = 0 \implies dF=0, F\textrm{F stazionaria}$)
+				\item F (come tutti i potenziali termodinamici) è definito all'equilibrio - altrimenti si deve supporre un insieme di sottosistemi in equilibrio e isotermi;
+				\item  esempio di lavoro - energia libera è il lavoro molare di estrazione di un metallo, che è pari alla variazione di F in una mole di $e^-$ nel passare dal metallo all'esterno
+			\end{itemize}			
+		\end{section}
+	
+		\begin{section}{Entalpia H}
+			H da una misura del lavoro estraibile da un sistema chiuso a p costante.\\
+			Si ottiene come trasformazione di Legendre di U rispetto a V:
+			\begin{equation}
+			H \overset{\cdot}{=} U- \dfrac{\partial U}{\partial V} V = U + pV
+			\end{equation}
+			
+			e si ha, da $U(S,V,N)$, una funzione $H = H(,S\frac{\partial U}{\partial V} \rightarrow p,N)$\\
+			
+			Inoltre 
+			\begin{equation}
+				\begin{aligned}
+				H = U + pV = TS -pV +\mu N + pV = TS + \mu N \\
+			 	dH = dU +pdV + Vdp = TdS - pdV + \mu dN + pdV + Vdp = TdS + Vdp + \mu dN
+				\end{aligned}
+			\end{equation}
+			Se il sistema è chiuso (non scambia massa) e mantenuto a p costante, $dH = TdS = \delta Q_{rev}$ il calore assorbito in una trasformazione reversibile è pari alla variazione di H.\\
+			
+			Nota: è questo il caso delle trasformazioni gatte a T costante; infatti p è costante, i potenziali chimici sono uguali\footnote{ce lo dice Josiah Willard Gibbs alla pagina seguente}, e il numero di moli (la massa) nel complesso è conservato$(dN^{(1)} + dN^{(2)} = 0) \implies Vdp + \sum_i \mu^{(i)} dN^{(i)} = 0$, da cui vediamo che il calore latente di trasformazione è la differenza di entalpia per unità di massa tra le fasi.\\
+			Similmente al caso dell'energia libera, si può dimostrare che preso un sistema chiuso S di costituenti mantenuti a p costante da un reservoir di pressione a $p=p^R$, il lavoro massimo estraibile da S è 
+			$$
+			dL^{max} = -dH^S
+			$$
+			e lo stato di equilibrio di un sistema mantenuto a p costante di un reservoir di pressione è quello che minimizza l'entalpia.
+			
+			Nota: Landau chiama $w \overset{\cdot}{=} H/M$ entalpia per unità di massa. $w = \varepsilon + pv = \varepsilon + p/\rho; v = \overset{\cdot}{=} V/M \textrm{volume specifico} = 1/\rho$
+		\end{section}
+	\begin{section}{Potenziale di Gibbs G ( o energia libera di Gibbs)}
+		G da una misura del lavoro estraibile da un sistema chiuso a T,p costanti. Si ottiene come trasformazione di Legendre di U rispetto a S e V:
+		$$
+		G \defeq U - \dfrac{\partial U}{\partial S}S - \dfrac{\partial U}{\partial V}V = U -TS + pV
+		$$
+		
+		e si ha, da $U(S,V,N)$, una funzione $H = H(\dfrac{\partial U}{\partial S}\rightarrow T,\frac{\partial U}{\partial V} \rightarrow p,N)$\\ 
+		
+		Inoltre 
+		\begin{equation}
+			G = U -TS + pV = TS - pV + \mu N - TS + pV = \mu N
+		\end{equation}
+		($\mu = G/N $ poteniale di Gibbs molare coincide con potenziale chimico)
+		\begin{equation}
+			dG = dU -TdS - SdT + pdV + Vdp = TdS - pdV + \mu dN - TdS - SdT + pdV + Vdp = -SdT + Vdp + \mu dN
+		\end{equation}
+		
+		Si può dimostrare che preso un sistema chiuso S i cui costituenti sono mantenuti a T e p costanti da reservoir di temperatura (termostato) a $T^R$ e di pressione a $p^R$, il lavoro massimo estraibile da S è 
+		$$
+		dL^{max} \leq -dG^S
+		$$
+		e lo stato di equilibrio di un sistema a T e p costanti grazie a reservoir ideali di T,p è quello che minimizza il potenziale di Gibbs.
+		
+		Nota: dato un sistema a due fasi in equilibrio, se una tra p e T è fissata, lo è anche l'altra, e $\mu^{(1)} = \mu^{(2)}$.\\
+		Ciò perchè 
+		$$
+		G = \mu^{(1)} dN^{(1)} + \mu^{(2)} dN^{(2)}
+		$$
+		e
+		$$
+		dG = \mu^{(1)} dN^{(1)} + \mu^{(2)} dN^{(2)}
+		$$
+		ma la massa complessiva non varia $\implies N^{(1)} + N^{(2)} = cost \iff dN^{(1)} + dN^{(2)} = 0$
+		$$
+		\implies dG = \mu^{(1)} dN^{(1)} - \mu^{(2)} dN^{(1)} = (\mu^{(1)} - \mu^{(2)})dN^{(1)}
+		$$
+		$$
+		\textrm{Equilibrio} \iff dG =0 \implies \mu^{(1)}(p,T) = \mu^{(2)}(p,T)
+		$$
+		Questa, essendo i $\mu^{(i)}$ rappresentativi di fasi diverse e di funzioni diverse, rappresenta un'espressione implicita della relazione tra p e T; se p fissata $\implies$ determinata anche T.
+		
+		Nota: Landau chiama $\phi \defeq G/M$ energia libera di Gibbs per unità di massa\\
+		
+		Poiché 
+		$$
+		G= \sum_i \mu^{(i)} N^{(i)} \implies dG = \sum_i \mu^{(i)} dN^{(i)} + \sum_i N^{(i)} d\mu^{(i)}
+		$$
+		ma anche da 
+		$$
+		G = U - TS + pV \implies dG = -SdT + Vdp + \sum_i \mu^{(i)} dN^{(i)}
+		$$
+		Si ottiene l'equazione di Gibbs - Duhem
+		\begin{equation}
+			\sum_i N^{(i)} d\mu^{(i)} = -SdT + Vdp
+		\end{equation}
+		Si può anche derivare l'equazione di Clausius - Clapeyron, che descrive la pendenza della curva di equilibrio $dp/dT$ tra due fasi di una sostanza.
+		
+		Le due fasi in equilibrio, 1 e 2, hanno lo stesso potenziale di Gibbs:
+		\begin{multline}
+			G_1(T,p) = G_2 (T,p) \implies dG_1(p,T)= dG_2(p,T) \\
+			\implies \dfrac{\partial G_1}{\partial p} dp + \dfrac{\partial G_1}{\partial T}dT = \dfrac{\partial G_2}{\partial p}dp + \dfrac{\partial G_2}{\partial T}dT
+		\end{multline}
+
+		Da $dG = -SdT + Vdp + \sum_i \mu^{(i)} dN^{(i)}$:
+		$$
+		\left\{\begin{matrix}
+		\dfrac{\partial G}{\partial T} = -S \\ 
+		\dfrac{\partial G}{\partial p} = V 
+		\end{matrix}\right.
+		$$
+		\begin{equation}
+			V_1 dp -S_1 dT = V_2 dp - S_2 dT \implies \dfrac{dp}{dT} = \dfrac{S_1 - S_2}{V_1 - V_2}
+		\end{equation}
+		
+		A T costante
+		
+		\begin{equation}
+			S_2 - S_1 = \int_{1}^{2}\dfrac{\delta Q}{T} = \dfrac{1}{T} \int_{1}^{2} \delta Q = \dfrac{\lambda M}{T}
+		\end{equation}
+		
+		Con $\lambda$ calore latente di trasformazione per unità ti massa, M=massa. Detto $v \defeq V/M$ volume specifico
+		\begin{equation}
+			\dfrac{dp}{dT} = \dfrac{\lambda}{T(V_2 - V_1)}
+		\end{equation}
+	\end{section}
+	\begin{section}{Relazioni di Maxwell}
+		Dal primo principio della termodinamica
+	\end{section}
+	
+	\end{chapter}
+	\begin{chapter}{Generalità sui continui}
+		
+	\end{chapter}
+	\begin{chapter}{Derivata sostanziale di integrali}
+		\begin{section}{Equazione di continuità - condizione analitica di incomprimibilità}
+		
+
+		\end{section}
+		\begin{section}{Leggi in forma integrale e locale}
+		contenuto...
+		\end{section}
+		\begin{section}{Derivata sostanziale degli integrali di linea}
+			contenuto...
+		\end{section}
+	\end{chapter}
+	
+	\begin{chapter}{Sforzi; fluidostatica: isotropia e continuità della pressione}
+		\begin{section}{Tensore degli sforzi}
+			contenuto...
+		\end{section}
+		\begin{section}{Sforzi (stresses)}
+			\begin{subsection}{Sforzo normale e sforzo tangenziale}
+				
+			\end{subsection}
+		\end{section}
+		\begin{section}{Fluidostatica}
+			\begin{subsection}{Isotropia della pressione in equilibrio}
+				contenuto...
+			\end{subsection}
+			\begin{subsection}{Continuità di p all'interfaccia}
+				contenuto...
+			\end{subsection}
+			\begin{subsection}{Tensione superficiale}
+				contenuto...
+			\end{subsection}
+		\end{section}
+	\end{chapter}
+
+	\begin{chapter}{Equazione di Eulero}
+		\begin{section}{Appendice: teorema della divergenza per casi particolari}
+		\end{section}
+	\end{chapter}
+
+	\begin{chapter}{Fluidostatica: equilibrio meccanico, equilibrio e stabilità dell'atmosfera}
+		\begin{section}{Ritorno alla fluidostatica}
+		\end{section}
+		\begin{section}{Equilibrio dell'atmosfera - stabilità dell'equilibrio}
+			\begin{subsection}{Equilibrio meccanico + termico (atmosfera isoterma secca)}
+				contenuto...
+			\end{subsection}
+			\begin{subsection}{Atmosfera isoentropica (secca)}
+				contenuto...
+			\end{subsection}
+		\end{section}
+	\end{chapter}
+
+	\begin{chapter}{Fluidostatica di fluidi incomprimibili}
+		\begin{section}{Barometro di Torricelli}
+			contenuto...
+		\end{section}
+		\begin{section}{Vasi comunicanti - fluidi immiscibili}
+			contenuto...
+		\end{section}
+		\begin{section}{Pressa idraulica}
+			contenuto...
+		\end{section}
+		\begin{section}{Forza di Archimede}
+			contenuto...
+		\end{section}
+		\begin{section}{Centro di spinta ed equilibrio}
+			contenuto...
+		\end{section}
+		\begin{section}{Isotropia}
+			contenuto...
+		\end{section}
+	\end{chapter}
+
+	\begin{chapter}{Fluidodinamica di fluidi perfetti; flusso di impulso e di energia}
+		\begin{section}{Linee di corrente (Stream lines)}
+			contenuto...
+		\end{section}
+		\begin{section}{Flusso di quantità di moto}
+			contenuto...
+		\end{section}
+		\begin{section}{Forza su un tubo a gomito}
+			contenuto...
+		\end{section}
+		\begin{section}{Flusso di energia}
+			contenuto...
+		\end{section}
+		\begin{subsection}{Flusso di energia in campo esterno}
+			contenuto...
+		\end{subsection}
+	\end{chapter}
+
+	\begin{chapter}{Flusso stazionario: equazione di bernoulli e applicazioni}
+		\begin{section}{Equazione di Bernoulli}
+			\begin{subsection}{Fluido incomprimibile}
+				contenuto...
+			\end{subsection}
+			\begin{subsection}{Fluido reale}
+				contenuto...
+			\end{subsection}
+		\end{section}
+		\begin{section}{Teorema di Torricelli}
+			\begin{subsection}{Tubo di Venturi}
+				contenuto...
+			\end{subsection}
+			\begin{subsection}{Cavitazione}
+				contenuto...
+			\end{subsection}
+			\begin{subsection}{Tubo di Pitot - sistema Pitot-statico}
+				contenuto...
+			\end{subsection}
+			\begin{subsection}{Sifone}
+				contenuto...
+			\end{subsection}
+			\begin{subsection}{Portanza}
+				contenuto...
+			\end{subsection}
+			\begin{subsection}{Volo aereo}
+				contenuto...
+			\end{subsection}
+		\end{section}
+	\end{chapter}
+
+	\begin{chapter}{Teorema di Kelvin; flusso potenziale}
+		\begin{section}{Teorema di Kelvin - conservazione della circolazione}
+			contenuto...
+		\end{section}
+		\begin{section}{Flusso potenziale}
+			\begin{subsection}{Flusso attorno ad un ostacolo}
+				contenuto...
+			\end{subsection}
+		\end{section}
+		\begin{section}{Condizione di incomprimibilità - una prospettiva fisica}
+			\begin{subsection}{Flusso stazionario}
+				contenuto...
+			\end{subsection}
+	 		\begin{subsection}{Flusso non stazionario}
+	 			contenuto...
+	 		\end{subsection}
+		\end{section}
+		\begin{section}{Forza di resistenza nel flusso potenziale oltre a un corpo}
+			contenuto...
+		\end{section}
+	\end{chapter}
+
+	\begin{chapter}{Onde di gravità}
+		\begin{section}{Condizioni cinematiche generali}
+			\begin{subsection}{Fluidi perfetti}
+				contenuto...
+			\end{subsection}
+		\end{section}
+		\begin{section}{Condizioni dinamiche generali}
+			\begin{subsection}{Fluidi perfetti}
+				contenuto...
+			\end{subsection}
+			\begin{subsection}{Flusso potenziale}
+				contenuto...
+			\end{subsection}
+		\end{section}
+		\begin{section}{Linearizzazione delle condizioni all'interfaccia}
+			contenuto...
+		\end{section}
+		\begin{section}{Onde di gravità in un bacino di profondità infinita}
+			contenuto...
+		\end{section}
+		\begin{section}{Onde di gravità in un bacino di profondità finita}
+			contenuto...
+		\end{section}
+		\begin{section}{Onde di gravità tra due fluidi limitati in altezza}
+			contenuto...
+		\end{section}
+	\end{chapter}
+
+	\begin{chapter}{Trasporto di energia in onde di gravità; appendici}
+		\begin{section}{Appendice - velocità di fase e di gruppo (momento minimo)}
+			contenuto...
+		\end{section}
+		\begin{section}{Appendice - Vademecum minimo di funzioni iperboliche}
+			contenuto...
+		\end{section}
+	\end{chapter}
+
+	\begin{chapter}{Fluidi reali: tensori dei gradienti delle velocità e degli sforzi, equazione di Navier-Stokes}
+		\begin{section}{Tensore dei gradienti delle velocità - decomposizione e significato geometrico}
+			contenuto...
+		\end{section}
+		\begin{section}{Fluidi reali (viscosi) - relazione di Cauchy}
+			contenuto...
+		\end{section}
+		\begin{section}{Tensore degli sforzi Newtoniano - equazione di Navier-Stokes}
+			contenuto...
+		\end{section}
+	\end{chapter}
+\end{document}
