@@ -34,6 +34,22 @@
 \newcommand{\eacc}{È }
 \newcommand{\defeq}{\overset{\cdot}{=}}
 
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Rn}{\mathbb{R}^n}
+\newcommand{\fourier}{\emph{F}}
+\newcommand{\x}{\bar{x}}
+\newcommand{\xt}{\bar{x}(t)}
+\newcommand{\vel}{\bar{v}}
+\newcommand{\vt}{\bar{v}(t)}
+\newcommand{\xp}{\bar{x}'}
+\newcommand{\y}{\bar{y}}
+\newcommand{\yp}{\bar{y}'}
+\newcommand{\kk}{\bar{k}}
+\newcommand{\kp}{\bar{k}'}
+\newcommand{\z}{\bar{z}}
+\newcommand{\n}{\bar{n}}
+
 \begin{document}
 	\titlepage
 	\maketitle
@@ -224,18 +240,233 @@
 		\end{equation}
 	\end{section}
 	\begin{section}{Relazioni di Maxwell}
-		Dal primo principio della termodinamica
+		Lavoreremo tipicamente in sistemi senza scambio di massa, ignorando quindi il termine $\sum_i \mu_i dN_i$
+		\begin{itemize}
+		\item Dal primo principio della termodinamica
+		$$
+		U=U(S,V)
+		$$
+		$$
+		dU = TdS - pdV \implies dU =\underset{T}{ \underbrace{\left.\dfrac{\partial U}{\partial S}\right|_{V=cost}}}dS +  \underset{-p}{\underbrace{\left.\dfrac{\partial U}{\partial V}\right|_{S=cost}}}dV
+		$$
+		$$
+		T= \left.\dfrac{\partial U}{\partial S}\right|_{V=cost}; \qquad p= -  \left.\dfrac{\partial U}{\partial V}\right|_{S=cost}
+		$$
+		Per il teorema di Schwarz, vale $\dfrac{\partial^2 U}{\partial S\partial T} = \dfrac{\partial^2 U}{\partial T \partial S} $ quindi
+		$$
+		\left.\dfrac{\partial T}{\partial V}\right|_{S=cost} = \dfrac{\partial}{\partial V}\left( \left.\dfrac{\partial U}{\partial S}\right|_V \right)_S = 
+		\dfrac{\partial}{\partial S}\left( \left.\dfrac{\partial U}{\partial V} \right|_S \right)_V = - \left.\dfrac{\partial p}{\partial S}\right|_{V=cost}
+		$$
+		
+		\begin{equation}
+			\left.\dfrac{\partial T}{\partial V}\right|_{S=cost} = - \left.\dfrac{\partial p}{\partial S}\right|_{V=cost}
+		\end{equation}
+		
+		\item Dal differenziale dell'entalpia
+		$$
+		H=H(S,p)
+		$$
+		$$
+		dH = TdS + Vdp \implies dH =\underset{T}{ \underbrace{\left.\dfrac{\partial H}{\partial S}\right|_{p=cost}}}dS +  \underset{V}{\underbrace{\left.\dfrac{\partial H}{\partial p}\right|_{S=cost}}}dp
+		$$
+		$$
+		T= \left.\dfrac{\partial H}{\partial S}\right|_{p=cost}; \qquad V= \left.\dfrac{\partial H}{\partial p}\right|_{S=cost}
+		$$
+		Per il teorema di Schwarz, uguagliando le due derivate parziali miste
+
+		
+		\begin{equation}
+		\left.\dfrac{\partial T}{\partial p}\right|_{S=cost} = \left.\dfrac{\partial V}{\partial S}\right|_{p=cost}
+		\end{equation}
+		
+		\item Dal differenziale del potenziale di Helmholtz
+		
+		$$
+		F=F(T,V)
+		$$
+		$$
+		dF = - SdT - pdV \implies dF =\underset{-S}{ \underbrace{\left.\dfrac{\partial F}{\partial T}\right|_{V=cost}}}dT +  \underset{-p}{\underbrace{\left.\dfrac{\partial F}{\partial V}\right|_{T=cost}}}dV
+		$$
+		$$
+		S = -\left.\dfrac{\partial F}{\partial T}\right|_{V=cost}; 
+		\qquad
+		p = - \left.\dfrac{\partial F}{\partial V}\right|_{T=cost}
+		$$
+		Per il teorema di Schwarz, uguagliando le due derivate parziali miste
+		
+		\begin{equation}
+		\left.\dfrac{\partial S}{\partial V}\right|_{T=cost} = \left.\dfrac{\partial p}{\partial T}\right|_{V=cost}
+		\end{equation}
+		
+		\item Dal differenziale del potenziale di Gibbs
+		
+		$$
+		G=G(T,p)
+		$$
+		$$
+		dG = - SdT + Vdp \implies dG =\underset{-S}{ \underbrace{\left.\dfrac{\partial G}{\partial T}\right|_{p=cost}}}dT +  \underset{V}{\underbrace{\left.\dfrac{\partial G}{\partial p}\right|_{T=cost}}}dp
+		$$
+		$$
+		S= -\left.\dfrac{\partial G}{\partial T}\right|_{p=cost}; 
+		\qquad
+		V= \left.\dfrac{\partial G}{\partial p}\right|_{S=cost}
+		$$
+		Per il teorema di Schwarz, uguagliando le due derivate parziali miste
+		
+		\begin{equation}
+		\left.\dfrac{\partial S}{\partial p}\right|_{T=cost} = - \left.\dfrac{\partial V}{\partial T}\right|_{p=cost}
+		\end{equation}
+		
+		\end{itemize}
+	\end{section}
+	\begin{section}{Calori specifici}
+		la capacità termica C di una porzione di materia M, è il rapporto tra calore $\delta Q$ assorbito e aumento di temperatura $dT$. La capacità termica per unità di massa è detta \underline{calore specifico} $C \defeq \delta Q/ dT$
+		$$
+		c \defeq \dfrac{1}{M}\dfrac{\delta Q}{d T}; \quad \textrm{oppure per mole} \quad C \defeq \dfrac{1}{N}\dfrac{\delta Q}{d T}
+		$$
+		Questo valore dipende dal tipo di processo in cui avviene lo scambio di $\delta Q$, ovvero a pressione o volume costante
+		
+		$$
+		c_p = \left.\dfrac{1}{M}\dfrac{\delta Q}{d T}\right|_{p=cost} \quad \left( C_p = \left.\dfrac{1}{N}\dfrac{\delta Q}{d T}\right|_{p} \right); \qquad c_v=  \left.\dfrac{1}{M}\dfrac{\delta Q}{d T}\right|_{V=cost} \quad  \left( C_V = \left.\dfrac{1}{N}\dfrac{\delta Q}{d T}\right|_{V} \right)
+		$$
+		
+		\begin{itemize}
+			\item Dal 1 principio della termodinamica $dU = \delta Q - pd$; per una trasformazione quasi-statica a V costante $dU = \delta Q$
+			$$
+			\implies c_V =  \left.\dfrac{1}{M}\dfrac{\partial U}{\partial T}\right|_{V} =  \left.\dfrac{1}{M}\dfrac{\partial \varepsilon}{\partial T}\right|_{V}
+			$$
+			avendo $\varepsilon \defeq U/M$ energia interna per unità di massa
+			
+			\item lavorando a p costante sfruttiamo $dH = TdS  + Vdp$, e per trasformazione quasi-statica, reversibile, $dH = TdS = \delta Q$
+			$$
+			\implies c_p =  \left.\dfrac{1}{M}\dfrac{\delta Q }{\partial T}\right|_{p} =
+			\left.\dfrac{T}{M}\dfrac{\partial S}{\partial T}\right|_{V} = 
+			\left. T \dfrac{\partial s}{\partial T}\right|_{p}
+			$$
+			con $s\defeq S/M$
+			
+			\item Per gas perfetti, $pV = NRT$; $ H= U+pV = U + NRT$
+			derivando rispetto a T
+			$$
+			\dfrac{\partial H}{\partial T} = \dfrac{\partial U}{\partial T} + NR
+			$$
+			$$
+			\implies \dfrac{1}{N} \dfrac{\partial H}{\partial T} = \dfrac{1}{N}\dfrac{\partial U}{\partial T} + R
+			$$
+			$$
+			C_p = C_V + R
+			$$
+		\end{itemize}		
+	\end{section}
+	\begin{section}{Processi adiabatici}
+		Una trasformazione è adiabatica quando avviene senza scambio di calore.\\
+		Poiché $\delta Q =0 \implies dU + pdV =0$
+		$$
+		NC_VdT + \dfrac{NRT}{V}dV = 0
+		$$
+		dividendo per $NC_VT$
+		$$
+		\implies \dfrac{dT}{T} + \dfrac{R}{C_V} \dfrac{dV}{V}=0 \quad 
+		\implies d\left(\log T\right) +  \dfrac{R}{C_V} d(\log V) = 0
+		$$
+		$$
+		\implies d\left(\log T + \log V^{ \frac{R}{C_V}}\right) = 0
+		$$
+		$$
+		\implies \log(TV^{R/C_V}) = \mathrm{costante} 
+		\quad \implies \quad TV^{R/C_V} = \textrm{costante}
+		$$
+		Definito $\gamma \defeq \dfrac{C_P}{C_V}$ si ha
+		$$
+		\gamma = \dfrac{C_V + R}{C_V} = 1 + \dfrac{R}{C_V} \implies \dfrac{R}{C_V} = \gamma -1
+		$$
+		\begin{equation}
+			TV^{\gamma -1} = \mathrm{costante}
+		\end{equation}
+		che è l'equazione della trasformazione adiabatica.
+		
+		Usando $pV = NRT$ si può scrivere equivalentemente
+		$$
+		T \propto pV \implies pV^{C_p/C_V}
+		$$
+		\begin{equation}
+			pV^{\gamma} = \mathrm{costante}
+		\end{equation}
+		
+		$$
+		V\propto Tp^{-1} \implies T\left(\dfrac{T}{p}\right)^{\gamma-1} = T^{\gamma}p^{1-\gamma} = \textrm{costante} \implies Tp^{\frac{1-\gamma}{\gamma}}
+		$$
+		\begin{equation}
+		Tp^{\frac{1}{\gamma -1}} = \mathrm{costante}
+		\end{equation}
+		
 	\end{section}
 	
 	\end{chapter}
 	\begin{chapter}{Generalità sui continui}
+		Particella o masserella fluida: porzione di mezzo continuo di dimensione lineare infinitesima.\\
+		Continui: mezzo materiale in cui, una volta stabilita la massima lunghezza d\footnote{Diametro = distanza massima tra due punti del volume} che si possa trattare come infinitesima, presa una regione di diametro d, il numero di costituenti microscopici in essa contenuti è grande abbastanza da risultare statisticamente significativo.\\
+		
+		In un solido o liquidi, possiamo stimare che le distanza intermolecolari/interatomiche siano dell'ordine di $1-\SI{10}{\angstrom}$, cioè $0.1-1\,mm$; in un cubo di lato $1\,\mu m$ ci saranno perciò $>10^9$ costituenti elementari. 
+		$1\,\mu m$ è perciò una lunghezza
+		\begin{itemize}
+			\item infinitesima se studiamo un fluido macroscopico, o al più oggetti nel fluido come granuli ($\sim 10-100\,\mu m$); OK trattazione come continuo.
+			\item NON infinitesima per un nanotecnologo, che ha a che gare con scale $\leq 1\,\mu m$; NON va bene l'ipotesi di continuo.
+		\end{itemize}
+		
+		Per un gaso come l'aria, una mole, cioè $\sim 10^{23}$ particelle, occupa $\approx 22$ litri in condizioni normali (1\,atm - $\SI{0}{\celsius}$), cioè un cubo di $\sim 0.28\,m$ di spigolo $\sim 10^5\,\mu m$; nel cubo di $\sim 1\mu m^3$ avremo $10^{23}/10^{15} = 10^8$ particelle, ancora un numero statisticamente sufficiente;
+		ma nella parte più alta dell'atmosfera terrestre ($>100\,km$), con pressioni di un ordine di grandezza inferiori, la statistica non è più plausibile e non siamo in regime di continuo.
+		
+		Come studiare un fluido? Due punti di vista:
+		\begin{itemize}
+			\item Euleriano: osservo la variazione temporale delle grandezze di interesse in un punto $\overline{x}$ fissato
+			
+			\item Lagrangiano: seguo una particella fluida (= un punto materiale) nella sua evoluzione, nel suo moto che quindi è in una $\x(t)$
+		\end{itemize}
+		Le grandezze che osservo sono quindi grandezze lagrangiane $F(\x(t),t)$ che dipende da t esplicitamente \underline{e} implicitamente attraverso $\x(t)$
+		
+		Data $F(\x,t)$ grandezza estensiva per unità di massa (udm). Per consolidare la sua derivata temporale seguendo la particella fluida che a t si trova in $\x(t)$ in moto, dobbiamo considerare che F dipende dal tempo sia esplicitamente che attraverso $\x(t)$, cioè $F=F(\x,t)$, quindi la derivata è la derivata di funzione composta a più variabili e si indica come 
+		$$
+		\dfrac{D}{Dt} =\quad \textrm{DERIVATA SOSTANZIALE o MATERIALE o CONVETTIVA}.
+		$$
+		Per la regola delle derivate di funzione composta
+		$$
+		\dfrac{D}{Dt} F(\xt,t) = \dfrac{\partial}{\partial t}F(\x,t) + \sum_{i=1}^{3} \underset{(grad F)_i}{\underbrace{\dfrac{\partial F(\x,t)}{\partial x_i}}} \underset{v_i(\x,t)}{\underbrace{\dfrac{dx_i(t)}{dt}}}
+		$$
+		\begin{equation}
+			\dfrac{D}{Dt} F(\xt,t) = \dfrac{\partial F}{\partial t} + \bar{v}(\x,t) \cdot \bar{F}(\x,t)
+		\end{equation}
+		e questa gode delle proprietà di tutte le derivate ordinarie; per esempio la variazione DF della F seguendo il continuo nel suo moto naturale è
+		\begin{equation}
+			DF(\x,t) = F(\x(t+dt),t+dt) - F(\xt,t) = \dfrac{D}{Dt} F(\xt,t) dt
+		\end{equation}
+		al primo ordine (relazione tra differenziali e derivata sostanziale)\\
+		Dim: $F(\xt,t) = F(g(x))$ con $g(t) = g(x_1(t),x_2(t),x_3(t),t)$
+		$$
+		\overset{\cdot}{g}(t) = \dfrac{d}{dt} g(t) = \left(\dfrac{dx_1}{dt},\dfrac{dx_2}{dt},\dfrac{dx_3}{dt},1\right) = (v_1,v_2,v_3,1)
+		$$
+		$$
+		\implies \dfrac{d}{dt}F(g(t)) = \dfrac{\partial F}{\partial g_1}\overset{\cdot}{g}_1 + \dfrac{\partial F}{\partial g_2}\overset{\cdot}{g}_2 + \dfrac{\partial F}{\partial g_3}\overset{\cdot}{g}_3 + \dfrac{\partial F}{\partial g_4}\overset{\cdot}{g}_4 
+		$$
+		$$
+		 = \dfrac{\partial F}{\partial x_1}v_1 + \dfrac{\partial F}{\partial x_2}v_2 + \dfrac{\partial F}{\partial x_3}v_3 + \dfrac{\partial F}{\partial t} = \dfrac{\partial F}{\partial t} + \vel \cdot grad \bar{F}(\x,t)
+		$$
+		Si tratta di una derivata fatta seguendo il moto della particella di continuo
 		
 	\end{chapter}
-	\begin{chapter}{Derivata sostanziale di integrali}
-		\begin{section}{Equazione di continuità - condizione analitica di incomprimibilità}
-		
 
+	\begin{chapter}{Derivata sostanziale di integrali}
+		\begin{section}{Derivata sostanziale degli integrali di volume}
+			Dato un continuo e presa una regione R(t) che al tempo t è occupata da parte di questo continuo, consideriamo una grandezza estensiva che prende il valore $\mathbb{F}(t)$ sul volume R(t); la grandezza per unità di volume associata a $\mathbb{F}(t)$ sia chiamata $F(\xt,t)$, ovvero vale
+			\begin{equation}
+				\mathbb{F}(t) = \int_{R(t)} F(\xt,t)d^3x
+			\end{equation}
+			$\mathbb{F}(t)$ dipende dal tempo sia esplicitamente, sia implicitamente perché seguendo il continuo nel suo moto naturale, R(t) evolve nel tempo la derivata temporale di $\mathbb{F}(t)$ è una derivata sostanziale. Si dimostra che 
 		\end{section}
+	
+		\begin{section}{Equazione di continuità - condizione analitica di incomprimibilità}
+		\end{section}
+	
 		\begin{section}{Leggi in forma integrale e locale}
 		contenuto...
 		\end{section}
