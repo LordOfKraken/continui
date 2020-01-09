@@ -55,7 +55,7 @@
 	\maketitle
 	\tableofcontents
 	
-	\begin{chapter}{Memorie della termodinamica}
+\chapter*{Memorie della termodinamica}
 		Il primo principio della termodinamica, visto come legge di bilancio energetico, parte dall'energia interna U di un sistema, la cui equazione dU è in generale scrivibile come
 		$$dU = TdS - pdV + \mu dN $$
 		(con $\mu$ potenziale chimico e N numero molare; se ci sono più componenti scriviamo $\sum_i \mu_i dN_i $, ma la sostanza è la stessa)
@@ -85,7 +85,7 @@
 		\begin{equation}
 			U(S,V,N)=TS-pV+\mu N
 		\end{equation}
-		\begin{section}{Potenziale di Helmholtz F ( o energia libera di Helmoltz)}
+	\section{Potenziale di Helmholtz F ( o energia libera di Helmoltz)}
 			F da una misura del lavoro estraibile da un sistema chiuso a T,V costanti (vediamo sotto).
 			Si ottiene come trasformazione di Legendre di U rispetto a S:
 			\begin{equation}
@@ -125,9 +125,9 @@
 				\item F (come tutti i potenziali termodinamici) è definito all'equilibrio - altrimenti si deve supporre un insieme di sottosistemi in equilibrio e isotermi;
 				\item  esempio di lavoro - energia libera è il lavoro molare di estrazione di un metallo, che è pari alla variazione di F in una mole di $e^-$ nel passare dal metallo all'esterno
 			\end{itemize}			
-		\end{section}
+		
 	
-		\begin{section}{Entalpia H}
+	\section{Entalpia H}
 			H da una misura del lavoro estraibile da un sistema chiuso a p costante.\\
 			Si ottiene come trasformazione di Legendre di U rispetto a V:
 			\begin{equation}
@@ -152,9 +152,10 @@
 			$$
 			e lo stato di equilibrio di un sistema mantenuto a p costante di un reservoir di pressione è quello che minimizza l'entalpia.
 			
-			Nota: Landau chiama $w \overset{\cdot}{=} H/M$ entalpia per unità di massa. $w = \varepsilon + pv = \varepsilon + p/\rho; v = \overset{\cdot}{=} V/M \textrm{volume specifico} = 1/\rho$
-		\end{section}
-	\begin{section}{Potenziale di Gibbs G ( o energia libera di Gibbs)}
+			Nota: Landau chiama $w \overset{\cdot}{=} H/M$ entalpia per unità di massa $(w = \varepsilon + pv = \varepsilon + p/\rho);\\
+			v \defeq V/M = 1/\rho$ volume specifico
+		
+	\section{Potenziale di Gibbs G ( o energia libera di Gibbs)}
 		G da una misura del lavoro estraibile da un sistema chiuso a T,p costanti. Si ottiene come trasformazione di Legendre di U rispetto a S e V:
 		$$
 		G \defeq U - \dfrac{\partial U}{\partial S}S - \dfrac{\partial U}{\partial V}V = U -TS + pV
@@ -238,8 +239,8 @@
 		\begin{equation}
 			\dfrac{dp}{dT} = \dfrac{\lambda}{T(V_2 - V_1)}
 		\end{equation}
-	\end{section}
-	\begin{section}{Relazioni di Maxwell}
+	
+	\section{Relazioni di Maxwell}
 		Lavoreremo tipicamente in sistemi senza scambio di massa, ignorando quindi il termine $\sum_i \mu_i dN_i$
 		\begin{itemize}
 		\item Dal primo principio della termodinamica
@@ -318,8 +319,8 @@
 		\end{equation}
 		
 		\end{itemize}
-	\end{section}
-	\begin{section}{Calori specifici}
+	
+	\section{Calori specifici}
 		la capacità termica C di una porzione di materia M, è il rapporto tra calore $\delta Q$ assorbito e aumento di temperatura $dT$. La capacità termica per unità di massa è detta \underline{calore specifico} $C \defeq \delta Q/ dT$
 		$$
 		c \defeq \dfrac{1}{M}\dfrac{\delta Q}{d T}; \quad \textrm{oppure per mole} \quad C \defeq \dfrac{1}{N}\dfrac{\delta Q}{d T}
@@ -357,8 +358,8 @@
 			C_p = C_V + R
 			$$
 		\end{itemize}		
-	\end{section}
-	\begin{section}{Processi adiabatici}
+	
+	\section{Processi adiabatici}
 		Una trasformazione è adiabatica quando avviene senza scambio di calore.\\
 		Poiché $\delta Q =0 \implies dU + pdV =0$
 		$$
@@ -400,10 +401,10 @@
 		Tp^{\frac{1}{\gamma -1}} = \mathrm{costante}
 		\end{equation}
 		
-	\end{section}
 	
-	\end{chapter}
-	\begin{chapter}{Generalità sui continui}
+	
+
+\chapter{Generalità sui continui}
 		Particella o masserella fluida: porzione di mezzo continuo di dimensione lineare infinitesima.\\
 		Continui: mezzo materiale in cui, una volta stabilita la massima lunghezza d\footnote{Diametro = distanza massima tra due punti del volume} che si possa trattare come infinitesima, presa una regione di diametro d, il numero di costituenti microscopici in essa contenuti è grande abbastanza da risultare statisticamente significativo.\\
 		
@@ -453,206 +454,437 @@
 		$$
 		Si tratta di una derivata fatta seguendo il moto della particella di continuo
 		
-	\end{chapter}
+	
 
-	\begin{chapter}{Derivata sostanziale di integrali}
-		\begin{section}{Derivata sostanziale degli integrali di volume}
+\chapter{Derivata sostanziale di integrali}
+	\section{Derivata sostanziale degli integrali di volume}
 			Dato un continuo e presa una regione R(t) che al tempo t è occupata da parte di questo continuo, consideriamo una grandezza estensiva che prende il valore $\mathbb{F}(t)$ sul volume R(t); la grandezza per unità di volume associata a $\mathbb{F}(t)$ sia chiamata $F(\xt,t)$, ovvero vale
 			\begin{equation}
 				\mathbb{F}(t) = \int_{R(t)} F(\xt,t)d^3x
 			\end{equation}
-			$\mathbb{F}(t)$ dipende dal tempo sia esplicitamente, sia implicitamente perché seguendo il continuo nel suo moto naturale, R(t) evolve nel tempo la derivata temporale di $\mathbb{F}(t)$ è una derivata sostanziale. Si dimostra che 
-		\end{section}
+			$\mathbb{F}(t)$ dipende dal tempo sia esplicitamente, sia implicitamente perché seguendo il continuo nel suo moto naturale, R(t) evolve nel tempo la derivata temporale di $\mathbb{F}(t)$ è una derivata sostanziale. Si dimostra che
+			\begin{equation}
+			\dfrac{D}{Dt} \mathbb{F}(t) = \int_{R(t)} \left[ \dfrac{D}{Dt}F(\xt,t) + F(\xt,t) \cdot div\vel(\xt,t) \right]d^3 x = \int_{R(t)} \left[ \dfrac{\partial}{\partial t}F(\xt,t) + \mathrm{div}\left(F(\x,t) \cdot \vel(\x,t)\right) \right]d^3 x
+			\end{equation}
+			
+			Dim: per definizione di derivata e di $\mathbb{F}(t)$
+			$$
+			\dfrac{D\mathbb{F}(t)}{Dt} = \lim_{\Delta t \to 0} \dfrac{1}{\Delta t} \left[\int_{R(t+\Delta t)} F(\x(t+\Delta t),t+\Delta t)d^3x - \int_{R(t)} F(\xt,t)d^3x \right]
+			$$
+			Detto $\xp \defeq \x(t+\Delta t)$, al primo ordine in t si può scrivere $\xp = \xp(\x) = \x + \vel \Delta t$.\\
+			Rielaboriamo dunque il primo integrale fatto a $t + \Delta t$ su $R(t+\Delta t)$:
+			$$
+			\int_{R(t+\Delta t)} F(\x(t+\Delta t),t+\Delta t)d^3x = \int_{R'} F(\xp,t+\Delta t) d^3x' = \int_{R} F(\xp(\x),t+\Delta t) \left|\mathbf{J}(x'|x)\right|d^3x
+			$$
+			avendo usato il teorema del cambio di variabile per fare il cambio $\xp \rightarrow \x$, ed essendo $\mathbf{J}(x'|x)$ Jacobiano della trasformazione, che si può elaborare sviluppando al I ordine $\xp$.
+			$$
+			\left|\mathbf{J}(x'|x)\right| = det\left(\dfrac{\partial x_i'}{\partial x_j}\right) = det \left(\delta_{ij} + \Delta t \dfrac{\partial v_i(\x,t)}{\partial x_j}\right) = 1 + \Delta t Tr \left(\dfrac{\partial v_i(\x,t)}{\partial x_j}\right)
+			$$
+			sfruttando $det\left(\mathbb{I} + \phi \underline{\underline{A}}\right) = 1 + \phi Tr\left(\underline{\underline{A}}\right)$ se $\phi ( =\Delta t)$ infinitesimo. Esplicitando la traccia si ha:
+			$$
+			\rightarrow = 1+ \Delta t \dfrac{\partial v_i(\x,t)}{\partial x_j} = 1 + \Delta t div(\vel(\x,t))
+			$$
+			Per l'espressione già nota del differenziale $DF(\xt,t)$, si può scrivere al primo ordine in t
+			$$
+			F(\x(t+\Delta t),t+\Delta t) = F(\xt,t) + \dfrac{D}{Dt}F(\xt,t) \Delta t
+			$$
+			e in definitiva riscriviamo la derivata totale di $\mathbb{F}(t)$
+			
+			$$
+			\dfrac{D\mathbb{F}(t)}{Dt} = \lim_{\Delta t \to 0} \dfrac{1}{\Delta t} \left[\int_{R(t+\Delta t)} F(\x(t+\Delta t),t+\Delta t)d^3x - \int_{R(t)} F(\xt,t)d^3x \right]=
+			$$
+			$$
+			= \lim_{\Delta t \to 0} \dfrac{1}{\Delta t} \left\{\int_{R(t)} \left[F(\xt,t) + \dfrac{D}{Dt}F(\xt,t) \Delta t\right]\left[1 + \Delta t \cdot \mathrm{div}(\vel(\xt,t)) \right] d^3x - \int_{R(t)} F(\xt,t) d^3x \right\}=
+			$$
+			
+			$$
+			= \lim_{\Delta t \to 0} \dfrac{1}{\Delta t} \left\{\int_{R(t)} \left[F(\xt,t)\mathrm{ div}\left(\vel(\xt,t)\right) \Delta t + \dfrac{DF(\xt,t)}{Dt} \Delta t + \dfrac{F(\xt,t)}{Dt}\mathrm{ div}\left(\vel(\xt,t)\right)(\Delta t)^2  \right] d^3x\right\} =
+			$$
+			
+			$$
+			= \int_{R(t)} \left[\dfrac{DF(\xt,t)}{Dt} + F(\xt,t) \mathrm{ div}\left[\vel(\xt,t)\right]\right]d^3x
+			$$
+			trascurando i termini al 2 ordine in $\Delta t$ e risolvendo il limite.\\
+			Esplicitando la derivata totale di F:
+			
+			$$
+			= \int_{R(t)} \left[\dfrac{\partial F(\xt,t)}{\partial t} + \underset{\mathrm{ div}\left(F\vel\right)}{ \underbrace{\left(\vel\cdot \mathrm{grad}\right)F(\x,t)  + F(\x,t)\mathrm{ div}\vel}}\right]d^3x
+			$$
+			\begin{equation}
+				= \int_{R(t)} \dfrac{\partial F(\xt,t)}{\partial t} + \mathrm{ div}\left(F(\xt,t)\vel(\xt,t)\right)d^3x
+			\end{equation}
+			L'espressione ha validità generale per ogni grandezza estensiva F. Il primo e fondamentale risultato è l'applicazione $F=\rho$ (densità) e la conseguente equazione di continuità, o conservazione della massa.
+		
 	
-		\begin{section}{Equazione di continuità - condizione analitica di incomprimibilità}
-		\end{section}
+		\section{Equazione di continuità - condizione analitica di incomprimibilità}
+		Presa una porzione di continuo racchiusa in una regione $R(t)$ al tempo t, seguendola nel suo moto naturale sappiamo che la massa M verrà conservata. Dato il legame con la densità $\rho(\x,t)$ diciamo quindi
+		\begin{equation}
+			M(t) = \int_{R(t)} \rho(\xt,t)d^3x = \mathrm{costante}
+		\end{equation}
+		ovvero $\frac{dM(t)}{dt} = 0 $ seguendo l'evoluzione naturale della porzione nella $R(t)$, che vuol dire
+		$$
+		\int_{R(t)} \rho(\xt,t)d^3x = \int_{R(t)}\left[ \dfrac{\partial \rho(\xt,t)}{\partial t} + \mathrm{ div}\left(\rho(\xt,t) \vel(\xt,t)\right)\right]d^3x = 0
+		$$
+		Data l'arbitrarietà con cui possiamo prendere $R(t)$, l'integranda deve essere nulla:
+		
+		\begin{equation}
+			 \dfrac{\partial \rho(\xt,t)}{\partial t} + \mathrm{ div}\left(\rho \vel\right) = 0
+		\end{equation}
+		che, come visto, si può anche scrivere
+		$$
+		\dfrac{D\rho}{Dt} + \rho\mathrm{ div}(\vel) \quad oppure \quad \dfrac{1}{\rho}\dfrac{D\rho}{Dt} = -\mathrm{ div}(\vel) \quad oppure \quad \dfrac{1}{v}\dfrac{Dv}{Dt} = \mathrm{ div}(v)
+		$$
+		con $v\defeq\frac{1}{\rho}$ volume specifico (volume per unità di massa).\\
+		Da questa si ricava la \underline{condizione di incomprimibilità} ( $\rho$ costante): $\mathrm{ div}(\vel) = 0$\\
+		
+		Nota: sempre sfruttando la legge per la derivazione degli integrali di volume, se $F(\x,t)=1$, si ha $\mathbb{F}(t) = \int_R 1\cdot d^3x = V$ volume della regione R, e
+		$$
+		\dfrac{dV}{dt} = \int_{R(t)}\left[\dfrac{\partial}{\partial t}(1) + \mathrm{ div}(1\cdot \vel)\right] d^3x = \int_{R(t)}\mathrm{div}(\vel) d^3x = \int_{\partial R(t)} \vel\cdot \hat{n} da
+		$$
+		dove $\partial R(t)$ è la superficie che racchiude $R(t)$, con $\hat{n}$ versore normale uscente.
+		Questo ci dice che la variazione di volume di un continuo nel tempo è data dal flusso di velocità attraverso il contorno del volume stesso.
+
 	
-		\begin{section}{Leggi in forma integrale e locale}
-		contenuto...
-		\end{section}
-		\begin{section}{Derivata sostanziale degli integrali di linea}
-			contenuto...
-		\end{section}
-	\end{chapter}
+	\section{Leggi in forma integrale e locale}
+		Le leggi della fisica vengono espresse in forma integrale oppure in forma locale. \eacc importante chiarire il legame tra queste due forme, che risultano, come ovvio, equivalenti.
+		
+		Una legge in forma \underline{integrale}, per quanto concerne l'approccio seguito qui, prevede l'uguaglianza tra la derivata sostanziale di un integrale, e dall'altra parte un altro integrale.
+		
+		Esempio: scriviamo la prima equazione cardinale della dinamica per una porzione di continuo di densità $\rho(\x,t)$ contenuta nella regione $R(t)$, sottoposta a forze la cui risultante è $F(t)$. 
+		L'equazione è:
+		
+		$$
+		\dfrac{D}{Dt}\int_{R(t)}\rho(\x,t)\vel(\x,t)d^3x = \bar{F}
+		$$
+		
+		A sua volta possiamo esprimere $\bar{F}$ usando $\bar{f} = $ forza per udM e integrando $\rho \bar{f}$, che è una forza per unità di volume (udV), sul volume $R(t)$:
+		
+		$$
+		\bar{F}(t) = \int_{R(t)} \rho(\x,t)\bar{f}(\x,t)d^3x 
+		$$
+		da cui
+		
+		$$
+		\dfrac{D}{Dt}\int_{R(t)}\rho(\x,t)\vel(\x,t)d^3x = \int_{R(t)} \rho(\x,t)\bar{f}(\x,t)d^3x
+		$$
+		
+		Il primo integrale, poiché $\rho$ soddisfa l'equazione di continuità, risulta scrivibile in altra maniera (la vediamo appena più sotto in generale):
+		
+		$$
+		\dfrac{D}{Dt}\int_{R(t)}\rho(\x,t)\vel(\x,t)d^3x =
+		\int_{R(t)}\rho \dfrac{D\vel}{Dt}d^3x
+		= \int_{R(t)} \rho(\x,t)\bar{f}(\x,t)d^3x
+		$$
+		
+		e dato che $R(t)$ è una regione arbitraria, devono essere uguali le funzioni integrande (e per $\rho \neq 0$ la si può semplificare) 
+		
+		$$
+		\dfrac{D\vel}{Dt}= \bar{f}
+		$$
+		che esprime la stessa legge integrale in forma locale, tra grandezze per udM ($\bar{f}=$ F per udM, $\vel=$ quantità di moto per udM).
+		
+		Come accennato, il risultato è generalizzabile. Prendiamo infatti una grandezza estensiva g, grandezza per udM
+		
+		$$
+		\dfrac{D}{Dt}\int_{R}\rho g d^3x = \int_{R} \left[\dfrac{\partial (\rho g)}{\partial t} + \mathrm{ div}(\rho g \vel)\right]d^3x=
+		$$
+		$$
+		=\int_{R}\left[\rho\dfrac{\partial g}{\partial t} + g  \dfrac{\partial \rho}{\partial t} + g\mathrm{ div}(\rho\vel) + \rho \vel \cdot \mathrm{grad} g\right] d^3x=
+		$$
+		$$
+		\int_{R} \left\{g\underset{=0 \textrm{ eq continuità}}{\underbrace{\left[\dfrac{\partial \rho}{\partial t} + \mathrm{ div}(\rho\vel)\right]}} +
+		\rho\underset{\defeq =  Dg/Dt}{ \underbrace{\left[\dfrac{\partial g}{\partial t} + \left(\vel \cdot \mathrm{grad}\right)g\right]}} \right\}d^3x
+		$$
+		\begin{equation}
+			\dfrac{D}{Dt}\int_{R}\rho g d^3x = \int_{R} \rho \dfrac{Dg}{D t}
+		\end{equation}
+		
+		Quindi se esiste h grandezza per udM tale che esiste una legge integrale
+		
+		$$
+		\dfrac{D}{Dt}\int_{R} \rho g d^3x = \int_{R} \rho h \quad \implies \quad \int_{R}\rho \dfrac{Dg}{Dt}d^3x = \int_{R} \rho h d^3x
+		$$
+		
+		questa è equivalente alla legge locale
+		
+		\begin{equation}
+			\dfrac{D}{Dt}g = h
+		\end{equation}
+		
+		Nota: si osservi che troviamo un legame tra la derivata parziale di una grandezza per udV, $\rho g$, e la derivata sostanziale della stessa grandezza per udM, g,
+		
+		\begin{equation}
+			\dfrac{\partial(\rho g)}{\partial t} + \mathrm{ div}\left(\rho g \vel\right) = \rho \dfrac{Dg}{Dt}
+		\end{equation}
+		
+	\section{Derivata sostanziale degli integrali di linea}
+		
+		Si dimostra che data una curva $\gamma(t)$m, che rappresenta un insieme di punti del continuo in moto naturale, e quindi curva che dipende dal tempo, presa la grandezza $f(\x,t)$
+		
+		\begin{equation}
+			\dfrac{D}{Dt}\int_{\gamma(t)} f(\x,t) ds_i = \int_{\gamma(t)} \left(f\dfrac{\partial v_i}{\partial x_j} + \dfrac{D}{Dt}f\delta_{ij}\right)ds_j
+		\end{equation}
+		
+		dove $ds_i$ è la i-esima componente dello spostamento $d\x$ lungo la curva e $v_i$ la componente i-esima della velocità $\vel$.
+		Dimostrazione: $\gamma$ è una funzione a valori in $\mathbb{R}^3$ definita su un intervallo $\left[a,b\right]$ della retta reale; la si può parametrizzare in vari modi equivalenti con un parametro corrente $\alpha \in \left[a,b\right]$ che in a e b dà gli estremi della curva.
+		
+		Scegliamo quindi una parametrizzazione, che si esprime con $\x=\x(\alpha)$, di $\alpha \in \left[a,b\right]$, funzione regolare di componenti i-esime $x_i(\alpha)$; l'integrale di linea è definito dall'integrale di Riemann ordinario su $\left[a,b\right]$
+		
+		$$
+		\int_{\gamma} f(\x)ds_i = \int_{a}^{b} f\left(\x(\alpha)\right)\dfrac{dx_i(\alpha)}{d\alpha}d\alpha
+		$$
+		
+		la cui derivata sostanziale è
+		$$
+		\dfrac{D}{Dt}\int_{\gamma(t)} f(\x,t)ds_i =
+		\lim_{\Delta t\to 0} \dfrac{1}{\Delta t}\left[\int_{\gamma(t+\Delta t)} f(\x,t+\Delta t)ds_i + \int_{\gamma(t)}f(\x,t)ds_i\right]
+		$$
+		(si noti che $\gamma$ varia essa stessa).
+		
+		Scegliamo una parametrizzazione opportuna: al tempo t $\x=\x(\alpha,t)$, e al tempo $t+\Delta t$ in modo che al valore di $\alpha$ corrisponda $\x(\alpha,t+\Delta t)=$ evoluto temporale del punto $\x$ della curva al tempo t, $\x(\alpha,t)$ dato dallo stesso $\alpha$.\\
+		In questo modo, vale al primo ordine in $\Delta t$
+		$$
+		\x(\alpha,t+\Delta t) = \x(\alpha,t) + \vel(\x(\alpha,t))\Delta t
+		$$
+		e rielaboriamo la differenza tra integrali
+		
+		$$
+		\int_{\gamma(t+\Delta t)}f(\x,t+\Delta t)ds_i - \int_{\gamma(t)}f(\x,t)ds_i
+		$$
+		
+		applicando la parametrizzazione
+		
+		$$
+		\int_{a}^{b} f(\x(\alpha,t+\Delta t), t+\Delta t)\dfrac{dx_i(\alpha,t+\Delta t)}{d\alpha}d\alpha - \int_{a}^{b} f(\x(\alpha,t),t)\dfrac{dx_i(\alpha,t)}{d\alpha}d\alpha
+		$$
+		
+		$$
+		=\int_{a}^{b} f(\x(\alpha,t+\Delta t), t+\Delta t)\dfrac{\partial x_i(\alpha,t+\Delta t)}{\partial x_j(\alpha,t)}\dfrac{dx_j(\alpha,t)}{d\alpha}d\alpha - \int_{a}^{b} f(\x(\alpha,t),t)\dfrac{dx_j(\alpha,t)}{d\alpha}\delta_{ij}d\alpha=
+		$$
+		
+		$$
+		=\int_{a}^{b}\left[f(\x(\alpha,t+\Delta t), t+\Delta t)\dfrac{\partial x_i(\alpha,t+\Delta t)}{\partial x_j(\alpha,t)} - f(\x(\alpha,t),t)\delta{ij}\right]\dfrac{dx_j(\alpha,t)}{d\alpha}d\alpha =
+		$$
+		
 	
-	\begin{chapter}{Sforzi; fluidostatica: isotropia e continuità della pressione}
-		\begin{section}{Tensore degli sforzi}
-			contenuto...
-		\end{section}
-		\begin{section}{Sforzi (stresses)}
-			\begin{subsection}{Sforzo normale e sforzo tangenziale}
+	
+	
+\chapter{Sforzi; fluidostatica: isotropia e continuità della pressione}
+	\section{Tensore degli sforzi}			
+		
+	\section{Sforzi (stresses)}
+		\subsection{Sforzo normale e sforzo tangenziale}			
+	
+	\section{Fluidostatica}
+		\subsection{Isotropia della pressione in equilibrio}			
+		\subsection{Continuità di p all'interfaccia}
+		\subsection{Tensione superficiale}
+	
+
+\chapter{Equazione di Eulero}
+	\section{Appendice: teorema della divergenza per casi particolari}
+		
+	
+
+\chapter{Fluidostatica: equilibrio meccanico, equilibrio e stabilità dell'atmosfera}
+	\section{Ritorno alla fluidostatica}
+	\section{Equilibrio dell'atmosfera - stabilità dell'equilibrio}
+		\subsection{Equilibrio meccanico + termico (atmosfera isoterma secca)}		
+		\subsection{Atmosfera isoentropica (secca)}
+					
+
+\chapter{Fluidostatica di fluidi incomprimibili}
+	\section{Barometro di Torricelli}
+	\section{Vasi comunicanti - fluidi immiscibili}
+	\section{Pressa idraulica}
+	\section{Forza di Archimede}
+	\section{Centro di spinta ed equilibrio}
+	\section{Isotropia}
+			
+		
+\chapter{Fluidodinamica di fluidi perfetti; flusso di impulso e di energia}
+	\section{Linee di corrente (Stream lines)}
+	\section{Flusso di quantità di moto}
+	\section{Forza su un tubo a gomito}
+	\section{Flusso di energia}
+		\subsection{Flusso di energia in campo esterno}
+			
+\chapter{Flusso stazionario: equazione di bernoulli e applicazioni}
+	\section{Equazione di Bernoulli}
+		\subsection{Fluido incomprimibile}
+		\subsection{Fluido reale}	
+	\section{Teorema di Torricelli}
+		\subsection{Tubo di Venturi}
+		\subsection{Cavitazione}
+		\subsection{Tubo di Pitot - sistema Pitot-statico}
+		\subsection{Sifone}
+		\subsection{Portanza}
+		\subsection{Volo aereo}
 				
-			\end{subsection}
-		\end{section}
-		\begin{section}{Fluidostatica}
-			\begin{subsection}{Isotropia della pressione in equilibrio}
-				contenuto...
-			\end{subsection}
-			\begin{subsection}{Continuità di p all'interfaccia}
-				contenuto...
-			\end{subsection}
-			\begin{subsection}{Tensione superficiale}
-				contenuto...
-			\end{subsection}
-		\end{section}
-	\end{chapter}
+\chapter{Teorema di Kelvin; flusso potenziale}
+	\section{Teorema di Kelvin - conservazione della circolazione}
+	
+	Si era visto che data la curva $\gamma(t)$, vale
+	
+	$$
+		\dfrac{D}{Dt}\int_{\gamma(t)} f(\x,t)ds_i = \int_{\gamma(t)} f(\x,t)\left(\dfrac{\partial v_i}{\partial x_j} + \dfrac{D}{Dt}f(\x,t)\delta_{ij}\right)ds_j
+	$$
+	e se $f=f_i$ i-esima componente di $\bar{f}(\x,t)$ vettoriale
+	
+	$$
+	\dfrac{D}{Dt} \int_{\gamma(t)}\bar{f}\cdot d\x = \int_{\gamma(t)}\bar{f}\cdot \vel + \int_{\gamma(t)}\dfrac{D}{Dt}\bar{f}\cdot d\x
+	$$
+	
+	dunque se $\bar{f}=\vel$ velocità di un fluido perfetto, e $\gamma(t)$ linea ideale costituita da punti del fluido nel loro moto
+	
+	$$
+	\dfrac{D}{Dt}\int_{\gamma(t)}\vel\cdot d\x = 
+	\int_{\gamma(t)}\vel\cdot d\vel + \int_{\gamma(t)}\dfrac{D\vel}{Dt}\cdot d\x = 
+	\int_{\gamma(t)} d\left(\dfrac{1}{2}v^2\right) + \int_{\gamma(t)} \dfrac{D\vel}{Dt}\cdot d\x
+	$$
+	
+	Se $\gamma(t)$ è una curva chiusa, si definisce $\Gamma$ circuitazione o circolazione $\Gamma \defeq \oint_{\gamma(t)}\vel \cdot d\bar{l}$ e il primo integrale, essendo l'integrale di differenziale esatto, è nullo
+	
+	$$
+	\dfrac{D \Gamma}{Dt} = \dfrac{D}{Dt}\oint_{\gamma(t)} \vel\cdot d\bar{l} = \oint_{\gamma(t)}\dfrac{D\vel}{Dt} \cdot d\bar{l}
+	$$
+	
+	per Eulero $\dfrac{D\vel}{Dt} = -\dfrac{1}{\rho} \mathrm{grad}p - \mathrm{grad}u$.
+	Nell'ipotesi di \underline{moto isoentropico}, oppure nel caso in cui  $ -\dfrac{1}{\rho}\mathrm{grad}p$ ammetta potenziale:
+	
+	$$
+	\dfrac{D\vel}{Dt} = -\mathrm{grad}(w+u)
+	$$
+	
+	$$
+	\implies \dfrac{D\Gamma}{Dt} = \oint_{\gamma(t)}\dfrac{D\vel}{Dt} \cdot d\bar{l} = 
+	-\oint_{\gamma(t)}\mathrm{grad}(w+u) \cdot d\bar{l} = 
+	-\int_{S}\textrm{ rot}\left[\mathrm{grad}(w+u)\right]\cdot d\bar{s}
+	$$
+	usando il teorema di Stokes nell'ultimo passaggio, ed essendo S superficie sottesa da $\gamma$.
+	Poiché rot(grad(f))=0 per ogni f, la circolazione $\Gamma$ si conserva nel moto isoentropico di fluido perfetto (Teorema di Kelvin)
+	\begin{equation}
+		\dfrac{D\Gamma}{Dt} = \oint_{\gamma(t)}\vel\cdot d\bar{l} = 0
+	\end{equation}
+	
+	prendendo una $\gamma$ che sottenda un'area infinitesima, ci restringiamo praticamente all'intorno di una singola linea di corrente; dunque la \underline{vorticità} (rot$\vel$) si conserva nel flusso, si muove col moto naturale del fluido
+	
+	$$
+	\oint_{\gamma = \partial S} \vel \cdot d\bar{l} = \int_{S}\mathrm{rot}\vel\cdot d\bar{a} \approxeq \mathrm{rot}\vel \cdot \bar{S} = costante
+	$$
+	
+	Nota: come Landau ci mettiamo nell'usuale caso isoentropico; basta in verità che $\dfrac{1}{\rho}\mathrm{grad}p$ ammetta potenziale $\psi$, così che $\dfrac{1}{\rho}\mathrm{grad}p = \mathrm{grad}\psi$; sono diversi i casi possibili:
+	\begin{itemize}
+		\item isoentropico: $dw = Tds + \dfrac{1}{\rho}p = \dfrac{1}{\rho}p \implies \psi = w$ entalpia
+		\item isotermo: $dp = -sdT + \dfrac{1}{\rho}p = \dfrac{1}{\rho}p \implies \psi=\phi$ energia libera di Gibbs
+		\item incomprimibile: $\dfrac{1}{\rho}p = \mathrm{grad}\left(\dfrac{p}{\rho}\right) \implies \psi = \dfrac{p}{\rho}$
+	\end{itemize}
+	
+	\section{Flusso potenziale}
+	La conservazione della circolazione $\Gamma = \oint_{\gamma(t)} \vel \cdot d\bar{l}$ porta a osservazioni significative.
+	Nel caso di flusso stazionario, se vi è un punto per  il quale $\mathrm{rot}\vel = 0$, presa la linea di corrente che vi passa e considerata una $\gamma$ infinitesima che la racchiude si può affermare che $\mathrm{rot}\vel =0$ su tutta la linea.
+	Se il moto non è stazionario, il risultato vale lungo una traiettoria; ciò sempre tenendo a mente l'ipotesi di flusso isoentropico, altrimenti l'osservazione non è valida ( per es. in caso di urti o turbolenza).
+	
+	Se supponiamo di avere un fluido in moto isoentropico che all'infinito è uniforme ($\vel$ uniforme; caso particolare fluido inizialmente a riposo, con $\vel$ nulla e $\implies$ uniforme; è potenziale e tale resta), $\mathrm{rot}\vel =0$ \underline{ovunque}.
+	
+	Il fatto che $\mathrm{rot}\vel =0$ dice che è esprimibile come gradiente di un potenziale scalare $\varphi : \vel = \mathrm{grad}\varphi$.
+	$\varphi$ è il POTENZIALE SCALARE DI VELOCIT$\grave{A}$ e il moto è nullo.
+	
+	\subsection{Flusso potenziale o irrotazionale}
+	
+	In questo flusso non esistono linee di corrente chiuse
+	$$
+	\oint_{\gamma} \vel \cdot d\bar{l} = 0
+	$$
+	Avendo $\vel = \mathrm{grad}\varphi $ e considerando $- 1\over \rho \mathrm{grad}p = - \mathrm{grad}\psi$, l'equazione di Eulero
+	
+	$$
+	\dfrac{\partial \vel}{\partial t} + \left(\vel \cdot \mathrm{grad}\right)\vel = -\mathrm{grad}\left(\psi + u\right)
+	$$
+	
+		\subsection{Flusso attorno ad un ostacolo}
+				
+	\section{Condizione di incomprimibilità - una prospettiva fisica}
+		\subsection{Flusso stazionario}				
+ 		\subsection{Flusso non stazionario}		
+	\section{Forza di resistenza nel flusso potenziale oltre a un corpo}		
 
-	\begin{chapter}{Equazione di Eulero}
-		\begin{section}{Appendice: teorema della divergenza per casi particolari}
-		\end{section}
-	\end{chapter}
 
-	\begin{chapter}{Fluidostatica: equilibrio meccanico, equilibrio e stabilità dell'atmosfera}
-		\begin{section}{Ritorno alla fluidostatica}
-		\end{section}
-		\begin{section}{Equilibrio dell'atmosfera - stabilità dell'equilibrio}
-			\begin{subsection}{Equilibrio meccanico + termico (atmosfera isoterma secca)}
-				contenuto...
-			\end{subsection}
-			\begin{subsection}{Atmosfera isoentropica (secca)}
-				contenuto...
-			\end{subsection}
-		\end{section}
-	\end{chapter}
+\chapter{Onde di gravità}
+	\section{Condizioni cinematiche generali}
+		\subsection{Fluidi perfetti}
+	\section{Condizioni dinamiche generali}
+		\subsection{Fluidi perfetti}
+		\subsection{Flusso potenziale}
+	\section{Linearizzazione delle condizioni all'interfaccia}
+	\section{Onde di gravità in un bacino di profondità infinita}
+	\section{Onde di gravità in un bacino di profondità finita}
+	\section{Onde di gravità tra due fluidi limitati in altezza}
 
-	\begin{chapter}{Fluidostatica di fluidi incomprimibili}
-		\begin{section}{Barometro di Torricelli}
-			contenuto...
-		\end{section}
-		\begin{section}{Vasi comunicanti - fluidi immiscibili}
-			contenuto...
-		\end{section}
-		\begin{section}{Pressa idraulica}
-			contenuto...
-		\end{section}
-		\begin{section}{Forza di Archimede}
-			contenuto...
-		\end{section}
-		\begin{section}{Centro di spinta ed equilibrio}
-			contenuto...
-		\end{section}
-		\begin{section}{Isotropia}
-			contenuto...
-		\end{section}
-	\end{chapter}
 
-	\begin{chapter}{Fluidodinamica di fluidi perfetti; flusso di impulso e di energia}
-		\begin{section}{Linee di corrente (Stream lines)}
-			contenuto...
-		\end{section}
-		\begin{section}{Flusso di quantità di moto}
-			contenuto...
-		\end{section}
-		\begin{section}{Forza su un tubo a gomito}
-			contenuto...
-		\end{section}
-		\begin{section}{Flusso di energia}
-			contenuto...
-		\end{section}
-		\begin{subsection}{Flusso di energia in campo esterno}
-			contenuto...
-		\end{subsection}
-	\end{chapter}
+\chapter{Trasporto di energia in onde di gravità; appendici}
+	\section{Appendice - velocità di fase e di gruppo (momento minimo)}
+	\section{Appendice - Vademecum minimo di funzioni iperboliche}
 
-	\begin{chapter}{Flusso stazionario: equazione di bernoulli e applicazioni}
-		\begin{section}{Equazione di Bernoulli}
-			\begin{subsection}{Fluido incomprimibile}
-				contenuto...
-			\end{subsection}
-			\begin{subsection}{Fluido reale}
-				contenuto...
-			\end{subsection}
-		\end{section}
-		\begin{section}{Teorema di Torricelli}
-			\begin{subsection}{Tubo di Venturi}
-				contenuto...
-			\end{subsection}
-			\begin{subsection}{Cavitazione}
-				contenuto...
-			\end{subsection}
-			\begin{subsection}{Tubo di Pitot - sistema Pitot-statico}
-				contenuto...
-			\end{subsection}
-			\begin{subsection}{Sifone}
-				contenuto...
-			\end{subsection}
-			\begin{subsection}{Portanza}
-				contenuto...
-			\end{subsection}
-			\begin{subsection}{Volo aereo}
-				contenuto...
-			\end{subsection}
-		\end{section}
-	\end{chapter}
+\chapter{Fluidi reali: tensori dei gradienti delle velocità e degli sforzi, equazione di Navier-Stokes}
 
-	\begin{chapter}{Teorema di Kelvin; flusso potenziale}
-		\begin{section}{Teorema di Kelvin - conservazione della circolazione}
-			contenuto...
-		\end{section}
-		\begin{section}{Flusso potenziale}
-			\begin{subsection}{Flusso attorno ad un ostacolo}
-				contenuto...
-			\end{subsection}
-		\end{section}
-		\begin{section}{Condizione di incomprimibilità - una prospettiva fisica}
-			\begin{subsection}{Flusso stazionario}
-				contenuto...
-			\end{subsection}
-	 		\begin{subsection}{Flusso non stazionario}
-	 			contenuto...
-	 		\end{subsection}
-		\end{section}
-		\begin{section}{Forza di resistenza nel flusso potenziale oltre a un corpo}
-			contenuto...
-		\end{section}
-	\end{chapter}
+	\section{Tensore dei gradienti delle velocità - decomposizione e significato geometrico}
+	\section{Fluidi reali (viscosi) - relazione di Cauchy}
+	\section{Tensore degli sforzi Newtoniano - equazione di Navier-Stokes}
 
-	\begin{chapter}{Onde di gravità}
-		\begin{section}{Condizioni cinematiche generali}
-			\begin{subsection}{Fluidi perfetti}
-				contenuto...
-			\end{subsection}
-		\end{section}
-		\begin{section}{Condizioni dinamiche generali}
-			\begin{subsection}{Fluidi perfetti}
-				contenuto...
-			\end{subsection}
-			\begin{subsection}{Flusso potenziale}
-				contenuto...
-			\end{subsection}
-		\end{section}
-		\begin{section}{Linearizzazione delle condizioni all'interfaccia}
-			contenuto...
-		\end{section}
-		\begin{section}{Onde di gravità in un bacino di profondità infinita}
-			contenuto...
-		\end{section}
-		\begin{section}{Onde di gravità in un bacino di profondità finita}
-			contenuto...
-		\end{section}
-		\begin{section}{Onde di gravità tra due fluidi limitati in altezza}
-			contenuto...
-		\end{section}
-	\end{chapter}
 
-	\begin{chapter}{Trasporto di energia in onde di gravità; appendici}
-		\begin{section}{Appendice - velocità di fase e di gruppo (momento minimo)}
-			contenuto...
-		\end{section}
-		\begin{section}{Appendice - Vademecum minimo di funzioni iperboliche}
-			contenuto...
-		\end{section}
-	\end{chapter}
+\chapter{Equazione di Navier-Stokes in coordinate non cartesiane}
 
-	\begin{chapter}{Fluidi reali: tensori dei gradienti delle velocità e degli sforzi, equazione di Navier-Stokes}
-		\begin{section}{Tensore dei gradienti delle velocità - decomposizione e significato geometrico}
-			contenuto...
-		\end{section}
-		\begin{section}{Fluidi reali (viscosi) - relazione di Cauchy}
-			contenuto...
-		\end{section}
-		\begin{section}{Tensore degli sforzi Newtoniano - equazione di Navier-Stokes}
-			contenuto...
-		\end{section}
-	\end{chapter}
+	\section{Coordinate cilindriche}
+	\section{Coordinate sferiche}
+
+
+\chapter{Momento angolare e considerazioni sulla simmetria del tensore degli sforzi}
+
+	\section{Equazioni cardinali della dinamica - momento angolare}
+	\section{Momento delle forze esterne}
+	\section{Momento angolare orbitale e di spin}
+	
+	\section{Pressione in un fluido in moto - pressione meccanica, termodinamica ed equilibrio locale}
+	\section{Flusso di quantità di moto - tensore densità di flusso di qdm}
+	\section{Dissipazione nel fluido viscoso}
+	
+\chapter{Esempi di flusso viscoso}
+
+	\section{Flusso di Poiseuille}
+		\subsection{Geometria piana}
+		\subsection{Geometria cilindica - flusso in conduttura}
+	\section{Flusso di Couette}
+		\subsection{Geometria piana}
+		\subsection{Geometria cilindica}
+	
+\chapter{Leggi di similarità e numeri adimensionati}
+
+	\section{Similitudine geometrica}
+	\section{Similitudine cinematica}
+	\section{Problemi simili}
+		\subsection{Problemi dinamicamente simili}
+		\subsection{Numero di Froude}
+		\subsection{Numero di Strouhal}
+	
+\chapter{Problema di Stokes per il moto di una sfera in un fluido viscoso}
+
+	\section{Confronto con sfera in fluido perfetto (moto potenziale)}
+	\section{Campo di pressione}
+	\section{Forza applicata sulla sfera}
+	\section{Perfezionamento della formula di Stokes}
+		\subsection{Formula di Oseen e coefficiene di penetrazione}
+		
+\chapter{Moti oscillatori in fluidi viscosi}
+
+	\section{Fluido di profondità infinita su piano oscillante}
+	\section{Fluido limitato tra due piani}
+	\section{Strato di fluido con pelo libero}
+	\section{Corpo generico oscillante in fluido viscoso}
+
+\chapter{Smorzamento di onde di gravità; correnti superficiali: Ekman layer}
+
+	\section{Ekman layer}
+	
+	
 \end{document}
